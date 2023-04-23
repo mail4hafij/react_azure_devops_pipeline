@@ -45,7 +45,7 @@ Many of the proposed solutions on the internet regarding this topic may not or s
 
 <img src="/azure-library.png" />
 
-- The pipeline. I have setup an windows agent on a azure VM. If you want to run pipeline on another agent please chagen the pool as needed.
+- I have setup an windows agent on a azure VM to run the following pipeline. If you want to run pipeline on another agent please change the pool as needed.
 
 ```
 # React App Deployment Pipeline

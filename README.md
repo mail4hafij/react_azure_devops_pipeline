@@ -1,11 +1,19 @@
 # Deploy React App in Azure windows App using Azure devops pipeline
-
-Azure devops pipeline (in yml) to deploy a frontend React project in azure App service (Windows machine) running on node stack.
+Azure devops pipeline (in yml) to deploy a React project in azure App service (Windows machine).
 
 Let's say we have a React project -
 
 - is maintained with yarn package management
 - has .env files in the root (usually .env files are not part of a git repo)
+
+### Good to know 
+Many of the proposed solutions on the internet regarding this topic may not or should not work. Let me explain why other solutions may not or should not work 
+
+- Adding pipeline variables (even though they are environment variables) should not work since a react app is run on the client side and there is no server side code that can inject environment variables to the react app.
+- Installing environment variable task on the classic pipeline should not work for the same reason.
+- Adding to Application Settings in azure app service should not work for the same reason.
+- Having .env or .env.development or .env.production file in a git repo should not be a good practice as it may compromise api keys and other sensitive information.
+
 
 ## Steps
 
@@ -35,7 +43,7 @@ Let's say we have a React project -
 
 - Add all those files (.env .env.development .env.production web.config) to azure devops library as secure files. We can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine before the task yarn build --mode development in the pipeline. And for the web.config file, should be downloaded into the build folder (after the yarn build task) before arhiving for artifact.
 
-
+<img src="/azure-library.png" />
 
 - The pipeline
 

@@ -1,2 +1,2 @@
-# deploy_react_app_azure_devops_pipeline
+# React App deployment using Azure devops pipeline
 Deploy React App in Azure App Service using Azure devops pipeline.

@@ -40,7 +40,7 @@ Many of the proposed solutions on the internet regarding this topic may not or s
 </configuration>
 ```
 
-- Add all those files (.env .env.development .env.production web.config) to azure devops library as secure files. You can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine before the task yarn build --mode development in the pipeline. And for the web.config file, should be downloaded into the build folder (after the yarn build task) before arhiving for artifact.
+- Add all those files (.env .env.development .env.production web.config) to azure devops library as secure files. You can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine before the task ```yarn build --mode development``` in the pipeline. And for the web.config file, should be downloaded into the build folder (after the yarn build task) before arhiving for artifact.
 
 <img src="/azure-library.png" />
 

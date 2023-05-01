@@ -1,5 +1,4 @@
-# Deploy React App in Azure windows App using Azure devops pipeline
-Azure devops pipeline (in yml) to deploy a React project in azure App service (Windows machine).
+# Azure devops pipeline (in yml) to deploy a React project in azure App service (Windows machine).
 
 Let's say we have a React project -
 
